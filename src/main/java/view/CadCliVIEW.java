@@ -6,7 +6,6 @@ package view;
 
 import dao.CadCliDAO;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -411,15 +410,15 @@ public class CadCliVIEW extends javax.swing.JFrame {
         CadCliVO vo = new CadCliVO();
 
         // Capturando dados da caixa de texto que serão excluídos
-        vo.setNome(txtInputNome.getText().toUpperCase());
+        vo.setNomeAluno(txtInputNome.getText().toUpperCase());
         vo.setEndereco(txtInputEndereco.getText().toUpperCase());
         vo.setRg(txtInputRg.getText());
         vo.setCpf(txtInputCpf.getText());
         vo.setDtnasc(txtInputDtNasc.getText());
         vo.setCelular(txtInputCelular.getText());
         vo.setEmail(txtInputEmail.getText().toUpperCase());
-        vo.setContato(txtInputTelFixo.getText());
-        vo.setCelularcontato(txtInputCelResponsavel.getText());
+        vo.setResponsavel(txtInputTelFixo.getText());
+        vo.setCelularResponsavel(txtInputCelResponsavel.getText());
 
         // Chamando método deleteCliente
         dao.deleteCliente(vo);
@@ -454,12 +453,12 @@ public class CadCliVIEW extends javax.swing.JFrame {
         }
 
         // Se todos os campos obrigatórios estiverem preenchidos,
-        // você pode tentar incluir o cliente no banco de dados
+        // Try incluir o cliente no banco de dados
         try {
             CadCliDAO dao = new CadCliDAO();
             CadCliVO vo = new CadCliVO();
 
-            vo.setNome(txtInputNome.getText().toUpperCase());
+            vo.setNomeAluno(txtInputNome.getText().toUpperCase());
             vo.setEndereco(txtInputEndereco.getText());
             vo.setModalidade(comboBoxHorario.getSelectedItem().toString());
             vo.setRg(txtInputRg.getText());
@@ -468,9 +467,9 @@ public class CadCliVIEW extends javax.swing.JFrame {
             vo.setCelular(txtInputCelular.getText());
             vo.setEmail(txtInputEmail.getText());
             vo.setSexo(comboBoxSexo.getSelectedItem().toString());
-            vo.setContato(txtInputTelFixo.getText());
+            vo.setResponsavel(txtInputTelFixo.getText());
 
-            dao.incluirClientes(vo);
+            dao.incluirAluno(vo);
 
             // Limpar os campos
             limparCampos();
@@ -535,15 +534,15 @@ public class CadCliVIEW extends javax.swing.JFrame {
             Object elemento = i.next(); // Objeto iterator
             CadCliVO palavra = (CadCliVO) elemento; // Instanciando CadCliVO para obter dados do BD e colocar nas caixas de txt
 
-            txtInputNome.setText(palavra.getNome());
+            txtInputNome.setText(palavra.getNomeAluno());
             txtInputEndereco.setText(palavra.getEndereco());
             txtInputRg.setText(palavra.getRg());
             txtInputCpf.setText(palavra.getCpf());
             txtInputDtNasc.setText(palavra.getDtnasc());
             txtInputCelular.setText(palavra.getCelular());
             txtInputEmail.setText(palavra.getEmail());
-            txtInputTelFixo.setText(palavra.getContato());
-            txtInputCelResponsavel.setText(palavra.getCelularcontato());
+            txtInputTelFixo.setText(palavra.getResponsavel());
+            txtInputCelResponsavel.setText(palavra.getCelularResponsavel());
 
             // Caixa de código falso para editar
             // Botões desabilitados
@@ -590,15 +589,15 @@ public class CadCliVIEW extends javax.swing.JFrame {
         if ((!txtInputNome.getText().equals("")) & (!txtInputEndereco.getText().equals("")) & (!txtInputRg.getText().equals("")) & (!txtInputCpf.getText().equals("")) & (!txtInputDtNasc.getText().equals("")) & (!txtInputCelular.getText().equals("")) & (!txtInputEmail.getText().equals("")) & (!txtInputTelFixo.getText().equals(""))) {
 
             // Caso preenchido, entra no laço e captura os dados digitados
-            vo.setNome(txtInputNome.getText().toUpperCase());
+            vo.setNomeAluno(txtInputNome.getText().toUpperCase());
             vo.setEndereco(txtInputEndereco.getText().toUpperCase());
             vo.setRg(txtInputRg.getText());
             vo.setCpf(txtInputCpf.getText());
             vo.setDtnasc(txtInputDtNasc.getText());
             vo.setCelular(txtInputCelular.getText());
             vo.setEmail(txtInputEmail.getText().toUpperCase());
-            vo.setContato(txtInputTelFixo.getText());
-            vo.setCelularcontato(txtInputCelResponsavel.getText());
+            vo.setResponsavel(txtInputTelFixo.getText());
+            vo.setCelularResponsavel(txtInputCelResponsavel.getText());
 
             // Chamando o método atualiza cliente na classe DAO
             dao.atualizaCliente(vo);

@@ -20,7 +20,6 @@ public class DAOConnection {
         if (conexao == null) {
             conexao = obtemConexao();
         }
-        
     }
     
     // Método
@@ -43,7 +42,6 @@ public class DAOConnection {
             sqle.printStackTrace();
             
             return null;
-            
         }
     }
     

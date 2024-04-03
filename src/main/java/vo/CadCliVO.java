@@ -4,27 +4,30 @@
  */
 package vo;
 
+import java.time.LocalTime;
+
 /**
  *
  * @author João
  */
 public class CadCliVO {
-    
+
     private String codigo;
-    private String nome;
+    private String nomeAluno;
     private String rg;
     private String cpf;
     private String endereco;
     private String dtnasc;
     private String celular;
+    private String telFixo;
     private String email;
-    private String contato;
-    private String celularcontato;
+    private String responsavel;
+    private String celularResponsavel;
     private String modalidade;
-    private Double peso;
-    private Double altura;
     private String sexo;
-    
+    private String periodo;
+    private LocalTime horario;
+
     public String getCodigo() {
         return codigo;
     }
@@ -33,12 +36,12 @@ public class CadCliVO {
         this.codigo = codigo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeAluno() {
+        return nomeAluno;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeAluno(String nomeAluno) {
+        this.nomeAluno = nomeAluno;
     }
 
     public String getRg() {
@@ -81,6 +84,14 @@ public class CadCliVO {
         this.celular = celular;
     }
 
+    public String getTelFixo() {
+        return telFixo;
+    }
+
+    public void setTelFixo(String telFixo) {
+        this.telFixo = telFixo;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -89,20 +100,20 @@ public class CadCliVO {
         this.email = email;
     }
 
-    public String getContato() {
-        return contato;
+    public String getResponsavel() {
+        return responsavel;
     }
 
-    public void setContato(String contato) {
-        this.contato = contato;
+    public void setResponsavel(String responsavel) {
+        this.responsavel = responsavel;
     }
 
-    public String getCelularcontato() {
-        return celularcontato;
+    public String getCelularResponsavel() {
+        return celularResponsavel;
     }
 
-    public void setCelularcontato(String celularcontato) {
-        this.celularcontato = celularcontato;
+    public void setCelularResponsavel(String celularResponsavel) {
+        this.celularResponsavel = celularResponsavel;
     }
 
     public String getModalidade() {
@@ -113,22 +124,6 @@ public class CadCliVO {
         this.modalidade = modalidade;
     }
 
-    public Double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(Double peso) {
-        this.peso = peso;
-    }
-
-    public Double getAltura() {
-        return altura;
-    }
-
-    public void setAltura(Double altura) {
-        this.altura = altura;
-    }
-
     public String getSexo() {
         return sexo;
     }
@@ -136,5 +131,21 @@ public class CadCliVO {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-    
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
+
+    public LocalTime getHorario() {
+        return horario;
+    }
+
+    public void setHorario(LocalTime horario) {
+        this.horario = horario;
+    }
+
 }
